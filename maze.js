@@ -49,10 +49,21 @@ function log(){
 		walltouchedF(null);
 	}	
 
-	let a = start.addEventListener("mouseenter", leave)
+	let body = document.getElementsByTagName("body");
+	body[0].addEventListener("mousemove", cheat);
+	let entered;
 
-	function leave(){
-		console.log(a.offsetX);
-		console.log(a.OffsetY);
+	function cheat(event){
+		console.log(event.clientX);
+		start.addEventListener("mouseenter", enter);
+		function enter(){
+			entered = true;
+		}
+		console.log(entered);
+		if(entered===true && event.clientX<155){
+			walltouchedF(true);
+			checkWin();
+			changeColorAll();
+		}
 	}
 }
