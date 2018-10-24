@@ -52,15 +52,15 @@ function log(){
 	let body = document.getElementsByTagName("body");
 	body[0].addEventListener("mousemove", cheat);
 	let entered;
-
+	let maze = document.getElementById("maze");
 	function cheat(event){
-		console.log(event.clientX);
+		console.log(maze.offsetLeft);
 		start.addEventListener("mouseenter", enter);
 		function enter(){
 			entered = true;
 		}
 		console.log(entered);
-		if(entered===true && event.clientX<155){
+		if(entered===true && event.clientX<maze.offsetLeft){
 			walltouchedF(true);
 			checkWin();
 			changeColorAll();
