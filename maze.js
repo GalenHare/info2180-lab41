@@ -60,7 +60,7 @@ function log(){
 			entered = true;
 		}
 		console.log(entered);
-		if(entered===true && event.clientX<155){
+		if(entered===true && event.clientX<(start.offsetLeft - start.scrollLeft + start.clientLeft)){
 			walltouchedF(true);
 			checkWin();
 			changeColorAll();
